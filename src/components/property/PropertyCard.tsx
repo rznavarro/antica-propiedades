@@ -10,9 +10,11 @@ import { PropertyBadgeList } from "@/components/property/PropertyBadge";
 export function PropertyCard({
   property,
   onHoverChange,
+  highlighted = false,
 }: {
   property: Property;
   onHoverChange?: (id: string | null) => void;
+  highlighted?: boolean;
 }) {
   const cover = property.media.find((m) => m.isCover) ?? property.media[0];
 
@@ -21,7 +23,9 @@ export function PropertyCard({
       href={`/propiedades/${property.slug}`}
       onMouseEnter={() => onHoverChange?.(property.id)}
       onMouseLeave={() => onHoverChange?.(null)}
-      className="group block overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition hover:border-white/20"
+      className={`group block overflow-hidden rounded-2xl border bg-white/[0.03] transition ${
+        highlighted ? "border-accent ring-1 ring-accent" : "border-white/10 hover:border-white/20"
+      }`}
     >
       <div className="relative aspect-[4/3] w-full overflow-hidden">
         <Image

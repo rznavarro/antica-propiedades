@@ -11,6 +11,7 @@ import { SimilarProperties } from "@/components/property/SimilarProperties";
 import { ShareButton } from "@/components/property/ShareButton";
 import { PropertyBadgeList } from "@/components/property/PropertyBadge";
 import { PropertyJsonLd } from "@/components/seo/PropertyJsonLd";
+import { PropertyMapLoader as PropertyMap } from "@/components/map/PropertyMapLoader";
 
 export function generateStaticParams() {
   return getAllProperties({ onlyAvailable: false }).map((p) => ({ slug: p.slug }));
@@ -110,8 +111,8 @@ export default async function PropertyPage({
 
           <div className="mt-10 border-t border-white/10 pt-8">
             <h2 className="text-fluid-h3 font-bold">Ubicación</h2>
-            <div className="mt-4 flex h-64 items-center justify-center rounded-2xl border border-dashed border-white/15 text-sm text-white/50">
-              Mapa interactivo próximamente
+            <div className="mt-4">
+              <PropertyMap lat={property.geo.lat} lng={property.geo.lng} titulo={property.titulo} />
             </div>
             <a
               href={`https://www.google.com/maps/dir/?api=1&destination=${property.geo.lat},${property.geo.lng}`}

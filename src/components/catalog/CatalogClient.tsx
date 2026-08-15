@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import dynamic from "next/dynamic";
 import { useRouter, useSearchParams } from "next/navigation";
 import type { Property } from "@/types/property";
 import {
@@ -18,6 +19,11 @@ import { ActiveFilterChips } from "@/components/catalog/ActiveFilterChips";
 import { EmptyState } from "@/components/catalog/EmptyState";
 import { SearchBar } from "@/components/catalog/SearchBar";
 
+const CatalogMap = dynamic(
+  () => import("@/components/map/CatalogMap").then((m) => m.CatalogMap),
+  { ssr: false, loading: () => <div className="h-full min-h-[420px] animate-pulse rounded-2xl bg-white/5" /> },
+);
+
 const PAGE_SIZE = 9;
 
 export function CatalogClient({ properties }: { properties: Property[] }) {
@@ -30,6 +36,7 @@ export function CatalogClient({ properties }: { properties: Property[] }) {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [view, setView] = useState<"lista" | "mapa">("lista");
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
 
   function updateFilters(next: CatalogFilters) {
     setFilters(next);
@@ -112,9 +119,25 @@ export function CatalogClient({ properties }: { properties: Property[] }) {
 
         <div>
           {view === "mapa" ? (
-            <div className="flex h-[480px] items-center justify-center rounded-2xl border border-dashed border-white/15 text-white/50">
-              Mapa interactivo próximamente
-            </div>
+            filtered.length === 0 ? (
+              <EmptyState onClear={() => updateFilters(EMPTY_FILTERS)} />
+            ) : (
+              <div className="grid gap-5 md:h-[calc(100vh-260px)] md:min-h-[500px] md:grid-cols-[360px_1fr]">
+                <div className="hidden space-y-4 overflow-y-auto pr-2 md:block">
+                  {filtered.map((p) => (
+                    <PropertyCard
+                      key={p.id}
+                      property={p}
+                      onHoverChange={setHoveredId}
+                      highlighted={hoveredId === p.id}
+                    />
+                  ))}
+                </div>
+                <div className="h-[420px] md:h-full">
+                  <CatalogMap properties={filtered} hoveredId={hoveredId} onHoverChange={setHoveredId} />
+                </div>
+              </div>
+            )
           ) : filtered.length === 0 ? (
             <EmptyState onClear={() => updateFilters(EMPTY_FILTERS)} />
           ) : (
