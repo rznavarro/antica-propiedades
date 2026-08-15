@@ -1,0 +1,50 @@
+{
+  "id": "p-008",
+  "slug": "departamento-macul-los-orientales",
+  "referencia": "AP-1008",
+  "titulo": "Departamento en Macul — Metro Los Orientales",
+  "operacion": "venta",
+  "tipo": "departamento",
+  "comuna": "macul",
+  "sector": "Metro Los Orientales",
+  "geo": {
+    "lat": -33.4886,
+    "lng": -70.5951
+  },
+  "precio": {
+    "monto": 2850,
+    "moneda": "UF"
+  },
+  "superficie": {
+    "util": 58,
+    "total": 61
+  },
+  "dormitorios": 2,
+  "banos": 2,
+  "estacionamientos": 1,
+  "bodegas": 1,
+  "orientacion": "Norte",
+  "piso": 6,
+  "anoConstruccion": 2022,
+  "descripcion": "Departamento nuevo cerca de Metro Los Orientales y campus universitarios, buena opción de inversión por su ubicación y plusvalía proyectada.",
+  "amenidades": [
+    "estacionamiento",
+    "bodega",
+    "gimnasio"
+  ],
+  "etiquetas": [
+    "nuevo-ingreso",
+    "promocion"
+  ],
+  "estado": "disponible",
+  "media": [
+    {
+      "url": "/images/prop-7.jpg",
+      "alt": "Exterior de condominio con áreas verdes, departamento en Macul",
+      "isCover": true
+    }
+  ],
+  "fechaPublicacion": "2026-07-28",
+  "fechaActualizacion": "2026-07-28",
+  "destacada": false
+}

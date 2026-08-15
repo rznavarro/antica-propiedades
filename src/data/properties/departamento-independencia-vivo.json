@@ -1,0 +1,49 @@
+{
+  "id": "p-010",
+  "slug": "departamento-independencia-vivo",
+  "referencia": "AP-1010",
+  "titulo": "Departamento en Independencia — cerca Vivo Independencia",
+  "operacion": "arriendo",
+  "tipo": "departamento",
+  "comuna": "independencia",
+  "sector": "Vivo Independencia",
+  "geo": {
+    "lat": -33.4147,
+    "lng": -70.6598
+  },
+  "precio": {
+    "monto": 420000,
+    "moneda": "CLP",
+    "precioAnterior": 480000,
+    "gastosComunes": 40000
+  },
+  "superficie": {
+    "util": 38,
+    "total": 40
+  },
+  "dormitorios": 1,
+  "banos": 1,
+  "estacionamientos": 0,
+  "bodegas": 1,
+  "piso": 4,
+  "anoConstruccion": 2019,
+  "descripcion": "Departamento de un dormitorio con precio rebajado, cerca de Vivo Independencia y Facultad de Medicina. Ideal para estudiantes o profesionales solos.",
+  "amenidades": [
+    "bodega"
+  ],
+  "etiquetas": [
+    "precio-rebajado",
+    "ultima-unidad"
+  ],
+  "estado": "disponible",
+  "media": [
+    {
+      "url": "/images/prop-6.jpg",
+      "alt": "Living comedor integrado, departamento en Independencia",
+      "isCover": true
+    }
+  ],
+  "fechaPublicacion": "2026-04-18",
+  "fechaActualizacion": "2026-07-29",
+  "destacada": false
+}

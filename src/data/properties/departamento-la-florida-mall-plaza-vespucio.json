@@ -1,0 +1,50 @@
+{
+  "id": "p-005",
+  "slug": "departamento-la-florida-mall-plaza-vespucio",
+  "referencia": "AP-1005",
+  "titulo": "Departamento en La Florida — Mall Plaza Vespucio",
+  "operacion": "arriendo",
+  "tipo": "departamento",
+  "comuna": "la-florida",
+  "sector": "Mall Plaza Vespucio",
+  "geo": {
+    "lat": -33.5225,
+    "lng": -70.5978
+  },
+  "precio": {
+    "monto": 460000,
+    "moneda": "CLP",
+    "gastosComunes": 45000
+  },
+  "superficie": {
+    "util": 51,
+    "total": 54
+  },
+  "dormitorios": 2,
+  "banos": 2,
+  "estacionamientos": 1,
+  "bodegas": 1,
+  "orientacion": "Norte",
+  "piso": 3,
+  "anoConstruccion": 2018,
+  "descripcion": "Departamento a pasos de Mall Plaza Vespucio y Metro Rojas Magallanes, ideal por conectividad y precio. Buena opción de entrada para arriendo en la zona sur.",
+  "amenidades": [
+    "estacionamiento",
+    "bodega"
+  ],
+  "etiquetas": [
+    "destacada",
+    "disponibilidad-inmediata"
+  ],
+  "estado": "disponible",
+  "media": [
+    {
+      "url": "/images/prop-5.jpg",
+      "alt": "Fachada de edificio residencial moderno, departamento en La Florida",
+      "isCover": true
+    }
+  ],
+  "fechaPublicacion": "2026-07-01",
+  "fechaActualizacion": "2026-07-25",
+  "destacada": true
+}

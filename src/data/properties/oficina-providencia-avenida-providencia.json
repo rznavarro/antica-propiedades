@@ -1,0 +1,48 @@
+{
+  "id": "p-009",
+  "slug": "oficina-providencia-avenida-providencia",
+  "referencia": "AP-1009",
+  "titulo": "Oficina en Providencia — Av. Providencia",
+  "operacion": "arriendo",
+  "tipo": "oficina",
+  "comuna": "providencia",
+  "sector": "Av. Providencia",
+  "geo": {
+    "lat": -33.4283,
+    "lng": -70.6161
+  },
+  "precio": {
+    "monto": 950000,
+    "moneda": "CLP",
+    "gastosComunes": 90000
+  },
+  "superficie": {
+    "util": 55,
+    "total": 55
+  },
+  "dormitorios": 0,
+  "banos": 1,
+  "estacionamientos": 1,
+  "bodegas": 0,
+  "piso": 7,
+  "anoConstruccion": 2016,
+  "descripcion": "Oficina lista para operar sobre Av. Providencia, con excelente conectividad de Metro y comercio. Ideal para equipos pequeños o profesionales independientes.",
+  "amenidades": [
+    "estacionamiento",
+    "conserjeria-24-7"
+  ],
+  "etiquetas": [
+    "disponibilidad-inmediata"
+  ],
+  "estado": "disponible",
+  "media": [
+    {
+      "url": "/images/prop-3.jpg",
+      "alt": "Interior de oficina moderna en Providencia",
+      "isCover": true
+    }
+  ],
+  "fechaPublicacion": "2026-06-10",
+  "fechaActualizacion": "2026-07-12",
+  "destacada": false
+}

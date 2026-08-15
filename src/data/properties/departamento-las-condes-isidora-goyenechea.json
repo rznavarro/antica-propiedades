@@ -1,0 +1,53 @@
+{
+  "id": "p-002",
+  "slug": "departamento-las-condes-isidora-goyenechea",
+  "referencia": "AP-1002",
+  "titulo": "Departamento en Las Condes — Isidora Goyenechea",
+  "operacion": "arriendo",
+  "tipo": "departamento",
+  "comuna": "las-condes",
+  "sector": "Isidora Goyenechea",
+  "geo": {
+    "lat": -33.4166,
+    "lng": -70.5985
+  },
+  "precio": {
+    "monto": 1750000,
+    "moneda": "CLP",
+    "gastosComunes": 180000
+  },
+  "superficie": {
+    "util": 67,
+    "total": 70
+  },
+  "dormitorios": 2,
+  "banos": 1,
+  "estacionamientos": 1,
+  "bodegas": 1,
+  "orientacion": "Poniente",
+  "piso": 12,
+  "anoConstruccion": 2021,
+  "descripcion": "Departamento de diseño en pleno sector financiero de Las Condes, a pasos de Apoquindo y El Golf. Terminaciones de alto estándar y vista despejada.",
+  "amenidades": [
+    "estacionamiento",
+    "bodega",
+    "gimnasio",
+    "conserjeria-24-7",
+    "piscina"
+  ],
+  "etiquetas": [
+    "destacada",
+    "nuevo-ingreso"
+  ],
+  "estado": "disponible",
+  "media": [
+    {
+      "url": "/images/prop-2.jpg",
+      "alt": "Sala de estar con home cinema, departamento en Las Condes",
+      "isCover": true
+    }
+  ],
+  "fechaPublicacion": "2026-07-10",
+  "fechaActualizacion": "2026-07-28",
+  "destacada": true
+}
