@@ -1,19 +1,18 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import mapboxgl from "mapbox-gl";
-import "mapbox-gl/dist/mapbox-gl.css";
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
 import { createRoot, type Root } from "react-dom/client";
 import type { Property } from "@/types/property";
 import { formatPrecio } from "@/lib/format";
 import { COMUNA_NOMBRES } from "@/lib/comuna-nombres";
-import { MAPBOX_STYLE, MAPBOX_TOKEN, hasMapboxToken } from "@/components/map/mapbox-config";
 
 function PriceBadge({ property, active }: { property: Property; active: boolean }) {
   return (
     <div
-      className={`cursor-pointer rounded-full border px-2.5 py-1 text-xs font-semibold shadow-lg transition ${
-        active ? "border-white bg-accent text-ink scale-110" : "border-white/30 bg-ink text-white"
+      className={`cursor-pointer whitespace-nowrap rounded-full border px-2.5 py-1 text-xs font-semibold shadow-lg transition ${
+        active ? "scale-110 border-white bg-accent text-ink" : "border-white/30 bg-ink text-white"
       }`}
     >
       {formatPrecio(property.precio)}
@@ -50,22 +49,24 @@ export function CatalogMap({
   onHoverChange?: (id: string | null) => void;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const mapRef = useRef<mapboxgl.Map | null>(null);
-  const markersRef = useRef<Map<string, mapboxgl.Marker>>(new Map());
+  const mapRef = useRef<L.Map | null>(null);
+  const markersRef = useRef<Map<string, L.Marker>>(new Map());
   const rootsRef = useRef<Map<string, Root>>(new Map());
 
   // Init map once.
   useEffect(() => {
-    if (!hasMapboxToken() || !containerRef.current || mapRef.current) return;
+    if (!containerRef.current || mapRef.current) return;
 
-    mapboxgl.accessToken = MAPBOX_TOKEN;
-    const map = new mapboxgl.Map({
-      container: containerRef.current,
-      style: MAPBOX_STYLE,
-      center: [-70.62, -33.46],
-      zoom: 10.5,
+    const map = L.map(containerRef.current, {
+      center: [-33.46, -70.62],
+      zoom: 11,
     });
-    map.addControl(new mapboxgl.NavigationControl({ showCompass: false }), "top-right");
+
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      maxZoom: 19,
+    }).addTo(map);
+
     mapRef.current = map;
     const roots = rootsRef.current;
 
@@ -80,43 +81,39 @@ export function CatalogMap({
   // Sync markers whenever the filtered property list changes.
   useEffect(() => {
     const map = mapRef.current;
-    if (!map || !hasMapboxToken()) return;
+    if (!map) return;
 
     markersRef.current.forEach((marker) => marker.remove());
     markersRef.current.clear();
     rootsRef.current.forEach((root) => root.unmount());
     rootsRef.current.clear();
 
-    const bounds = new mapboxgl.LngLatBounds();
+    const points: L.LatLngExpression[] = [];
 
     properties.forEach((property) => {
-      const el = document.createElement("div");
-      const root = createRoot(el);
-      root.render(<PriceBadge property={property} active={hoveredId === property.id} />);
-      rootsRef.current.set(property.id, root);
+      const icon = L.divIcon({ className: "", html: "", iconSize: [1, 1] });
+      const marker = L.marker([property.geo.lat, property.geo.lng], { icon }).addTo(map);
 
-      el.addEventListener("mouseenter", () => onHoverChange?.(property.id));
-      el.addEventListener("mouseleave", () => onHoverChange?.(null));
+      const el = marker.getElement();
+      if (el) {
+        const root = createRoot(el);
+        root.render(<PriceBadge property={property} active={hoveredId === property.id} />);
+        rootsRef.current.set(property.id, root);
 
-      const popup = new mapboxgl.Popup({ offset: 16, closeButton: true }).setDOMContent(
-        (() => {
-          const popupEl = document.createElement("div");
-          createRoot(popupEl).render(<PopupCard property={property} />);
-          return popupEl;
-        })(),
-      );
+        el.addEventListener("mouseenter", () => onHoverChange?.(property.id));
+        el.addEventListener("mouseleave", () => onHoverChange?.(null));
+      }
 
-      const marker = new mapboxgl.Marker({ element: el, anchor: "bottom" })
-        .setLngLat([property.geo.lng, property.geo.lat])
-        .setPopup(popup)
-        .addTo(map);
+      const popupEl = document.createElement("div");
+      createRoot(popupEl).render(<PopupCard property={property} />);
+      marker.bindPopup(popupEl);
 
       markersRef.current.set(property.id, marker);
-      bounds.extend([property.geo.lng, property.geo.lat]);
+      points.push([property.geo.lat, property.geo.lng]);
     });
 
-    if (properties.length > 0) {
-      map.fitBounds(bounds, { padding: 60, maxZoom: 14, duration: 0 });
+    if (points.length > 0) {
+      map.fitBounds(L.latLngBounds(points), { padding: [60, 60], maxZoom: 14 });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [properties]);
@@ -129,15 +126,6 @@ export function CatalogMap({
       root.render(<PriceBadge property={property} active={hoveredId === id} />);
     });
   }, [hoveredId, properties]);
-
-  if (!hasMapboxToken()) {
-    return (
-      <div className="flex h-full min-h-[420px] items-center justify-center rounded-2xl border border-dashed border-white/15 px-4 text-center text-sm text-white/50">
-        Mapa no configurado — agrega NEXT_PUBLIC_MAPBOX_TOKEN en las variables de
-        entorno para activarlo.
-      </div>
-    );
-  }
 
   return <div ref={containerRef} className="h-full min-h-[420px] w-full rounded-2xl" />;
 }

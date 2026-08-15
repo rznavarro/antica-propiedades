@@ -1,9 +1,15 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import mapboxgl from "mapbox-gl";
-import "mapbox-gl/dist/mapbox-gl.css";
-import { MAPBOX_STYLE, MAPBOX_TOKEN, hasMapboxToken } from "@/components/map/mapbox-config";
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
+
+const pinIcon = L.divIcon({
+  className: "",
+  html: `<div style="width:16px;height:16px;border-radius:9999px;background:#fba13a;border:2px solid #fff;box-shadow:0 0 0 4px rgba(251,161,58,0.35)"></div>`,
+  iconSize: [16, 16],
+  iconAnchor: [8, 8],
+});
 
 export function PropertyMap({
   lat,
@@ -15,26 +21,23 @@ export function PropertyMap({
   titulo: string;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const mapRef = useRef<mapboxgl.Map | null>(null);
+  const mapRef = useRef<L.Map | null>(null);
 
   useEffect(() => {
-    if (!hasMapboxToken() || !containerRef.current || mapRef.current) return;
+    if (!containerRef.current || mapRef.current) return;
 
-    mapboxgl.accessToken = MAPBOX_TOKEN;
-
-    const map = new mapboxgl.Map({
-      container: containerRef.current,
-      style: MAPBOX_STYLE,
-      center: [lng, lat],
+    const map = L.map(containerRef.current, {
+      center: [lat, lng],
       zoom: 15,
+      scrollWheelZoom: false,
     });
 
-    map.addControl(new mapboxgl.NavigationControl({ showCompass: false }), "top-right");
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      maxZoom: 19,
+    }).addTo(map);
 
-    new mapboxgl.Marker({ color: "#fba13a" })
-      .setLngLat([lng, lat])
-      .setPopup(new mapboxgl.Popup({ offset: 24 }).setText(titulo))
-      .addTo(map);
+    L.marker([lat, lng], { icon: pinIcon }).addTo(map).bindPopup(titulo);
 
     mapRef.current = map;
 
@@ -43,15 +46,6 @@ export function PropertyMap({
       mapRef.current = null;
     };
   }, [lat, lng, titulo]);
-
-  if (!hasMapboxToken()) {
-    return (
-      <div className="flex h-64 items-center justify-center rounded-2xl border border-dashed border-white/15 px-4 text-center text-sm text-white/50">
-        Mapa no configurado — agrega NEXT_PUBLIC_MAPBOX_TOKEN en las variables de
-        entorno para activarlo.
-      </div>
-    );
-  }
 
   return (
     <div
