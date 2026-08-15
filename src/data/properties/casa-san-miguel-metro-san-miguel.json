@@ -1,0 +1,47 @@
+{
+  "id": "p-007",
+  "slug": "casa-san-miguel-metro-san-miguel",
+  "referencia": "AP-1007",
+  "titulo": "Casa en San Miguel — cerca Metro San Miguel",
+  "operacion": "arriendo",
+  "tipo": "casa",
+  "comuna": "san-miguel",
+  "sector": "Metro San Miguel",
+  "geo": {
+    "lat": -33.4952,
+    "lng": -70.6512
+  },
+  "precio": {
+    "monto": 780000,
+    "moneda": "CLP"
+  },
+  "superficie": {
+    "util": 110,
+    "total": 140
+  },
+  "dormitorios": 3,
+  "banos": 2,
+  "estacionamientos": 1,
+  "bodegas": 0,
+  "orientacion": "Poniente",
+  "anoConstruccion": 2005,
+  "descripcion": "Casa de dos pisos con patio, a pocas cuadras de Metro San Miguel. Buena opción para familias, con living-comedor amplio y cocina independiente.",
+  "amenidades": [
+    "estacionamiento",
+    "pet-friendly"
+  ],
+  "etiquetas": [
+    "nuevo-ingreso"
+  ],
+  "estado": "disponible",
+  "media": [
+    {
+      "url": "/images/prop-6.jpg",
+      "alt": "Sala de estudio con estanterías de madera, casa en San Miguel",
+      "isCover": true
+    }
+  ],
+  "fechaPublicacion": "2026-07-22",
+  "fechaActualizacion": "2026-07-30",
+  "destacada": false
+}

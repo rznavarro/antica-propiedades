@@ -1,0 +1,53 @@
+{
+  "id": "p-004",
+  "slug": "departamento-vitacura-metro-manquehue",
+  "referencia": "AP-1004",
+  "titulo": "Departamento en Vitacura — Metro Manquehue",
+  "operacion": "arriendo",
+  "tipo": "departamento",
+  "comuna": "vitacura",
+  "sector": "Metro Manquehue",
+  "geo": {
+    "lat": -33.4008,
+    "lng": -70.5789
+  },
+  "precio": {
+    "monto": 1428000,
+    "moneda": "CLP",
+    "gastosComunes": 150000
+  },
+  "superficie": {
+    "util": 76,
+    "total": 80
+  },
+  "dormitorios": 2,
+  "banos": 2,
+  "estacionamientos": 2,
+  "bodegas": 1,
+  "orientacion": "Norponiente",
+  "piso": 9,
+  "anoConstruccion": 2020,
+  "descripcion": "Departamento con dos estacionamientos a pasos de Metro Manquehue, en uno de los sectores más buscados de Vitacura. Amplias terrazas y áreas comunes.",
+  "amenidades": [
+    "estacionamiento",
+    "bodega",
+    "gimnasio",
+    "piscina",
+    "quincho",
+    "conserjeria-24-7"
+  ],
+  "etiquetas": [
+    "destacada"
+  ],
+  "estado": "disponible",
+  "media": [
+    {
+      "url": "/images/prop-4.jpg",
+      "alt": "Dormitorio principal con luz natural, departamento en Vitacura",
+      "isCover": true
+    }
+  ],
+  "fechaPublicacion": "2026-06-20",
+  "fechaActualizacion": "2026-07-22",
+  "destacada": true
+}

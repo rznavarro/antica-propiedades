@@ -1,0 +1,65 @@
+[
+  {
+    "slug": "santiago-centro",
+    "nombre": "Santiago Centro",
+    "blurb": "El corazón administrativo y cultural de la capital. Ideal para quienes buscan cercanía con el trabajo, universidades y vida urbana las 24 horas.",
+    "heroImage": "/images/prop-3.jpg",
+    "geo": { "lat": -33.4372, "lng": -70.6506, "zoom": 14 }
+  },
+  {
+    "slug": "nunoa",
+    "nombre": "Ñuñoa",
+    "blurb": "Barrios residenciales consolidados, plazas y una oferta gastronómica creciente, a pasos del Estadio Nacional.",
+    "heroImage": "/images/prop-9.jpg",
+    "geo": { "lat": -33.4558, "lng": -70.599, "zoom": 14 }
+  },
+  {
+    "slug": "providencia",
+    "nombre": "Providencia",
+    "blurb": "Comuna verde y bien conectada, con oficinas, comercio y vida de barrio a lo largo de toda la Av. Providencia.",
+    "heroImage": "/images/prop-3.jpg",
+    "geo": { "lat": -33.426, "lng": -70.61, "zoom": 14 }
+  },
+  {
+    "slug": "las-condes",
+    "nombre": "Las Condes",
+    "blurb": "Centro financiero y residencial premium de Santiago, con centros comerciales, parques y edificios de alto estándar.",
+    "heroImage": "/images/prop-2.jpg",
+    "geo": { "lat": -33.4089, "lng": -70.568, "zoom": 13 }
+  },
+  {
+    "slug": "vitacura",
+    "nombre": "Vitacura",
+    "blurb": "Una de las comunas más exclusivas de Santiago, con casas y departamentos de alto estándar cerca del Parque Bicentenario.",
+    "heroImage": "/images/prop-4.jpg",
+    "geo": { "lat": -33.3833, "lng": -70.5667, "zoom": 13 }
+  },
+  {
+    "slug": "la-florida",
+    "nombre": "La Florida",
+    "blurb": "Una de las comunas más pobladas de Santiago, con buena conectividad de Metro y una oferta de arriendo accesible.",
+    "heroImage": "/images/prop-5.jpg",
+    "geo": { "lat": -33.5228, "lng": -70.5989, "zoom": 13 }
+  },
+  {
+    "slug": "san-miguel",
+    "nombre": "San Miguel",
+    "blurb": "Comuna en plena renovación urbana, con buena conectividad hacia el centro y precios más accesibles.",
+    "heroImage": "/images/prop-6.jpg",
+    "geo": { "lat": -33.4958, "lng": -70.65, "zoom": 14 }
+  },
+  {
+    "slug": "macul",
+    "nombre": "Macul",
+    "blurb": "Comuna universitaria y residencial, con buena conectividad de Metro Línea 4 y precios competitivos.",
+    "heroImage": "/images/prop-7.jpg",
+    "geo": { "lat": -33.4881, "lng": -70.5978, "zoom": 14 }
+  },
+  {
+    "slug": "independencia",
+    "nombre": "Independencia",
+    "blurb": "Comuna cercana al centro con fuerte presencia estudiantil y de servicios de salud, y una oferta de arriendo en crecimiento.",
+    "heroImage": "/images/prop-6.jpg",
+    "geo": { "lat": -33.4172, "lng": -70.6633, "zoom": 14 }
+  }
+]

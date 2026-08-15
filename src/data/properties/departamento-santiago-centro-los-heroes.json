@@ -1,0 +1,48 @@
+{
+  "id": "p-006",
+  "slug": "departamento-santiago-centro-los-heroes",
+  "referencia": "AP-1006",
+  "titulo": "Departamento en Santiago Centro — Metro Los Héroes",
+  "operacion": "venta",
+  "tipo": "departamento",
+  "comuna": "santiago-centro",
+  "sector": "Los Héroes",
+  "geo": {
+    "lat": -33.4453,
+    "lng": -70.6631
+  },
+  "precio": {
+    "monto": 3200,
+    "moneda": "UF"
+  },
+  "superficie": {
+    "util": 45,
+    "total": 47
+  },
+  "dormitorios": 1,
+  "banos": 1,
+  "estacionamientos": 0,
+  "bodegas": 1,
+  "orientacion": "Sur",
+  "piso": 14,
+  "anoConstruccion": 2015,
+  "descripcion": "Departamento de un dormitorio a pasos de Metro Los Héroes, ideal para inversión o primera vivienda. Excelente conectividad con toda la Región Metropolitana.",
+  "amenidades": [
+    "bodega",
+    "conserjeria-24-7"
+  ],
+  "etiquetas": [
+    "sin-comision"
+  ],
+  "estado": "disponible",
+  "media": [
+    {
+      "url": "/images/prop-1.jpg",
+      "alt": "Fachada de edificio residencial en Santiago Centro",
+      "isCover": true
+    }
+  ],
+  "fechaPublicacion": "2026-07-05",
+  "fechaActualizacion": "2026-07-18",
+  "destacada": false
+}

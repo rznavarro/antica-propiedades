@@ -1,0 +1,50 @@
+{
+  "id": "p-003",
+  "slug": "departamento-providencia-hospital-del-salvador",
+  "referencia": "AP-1003",
+  "titulo": "Departamento en Providencia — Hospital del Salvador",
+  "operacion": "arriendo",
+  "tipo": "departamento",
+  "comuna": "providencia",
+  "sector": "Hospital del Salvador",
+  "geo": {
+    "lat": -33.4319,
+    "lng": -70.6069
+  },
+  "precio": {
+    "monto": 1390000,
+    "moneda": "CLP",
+    "gastosComunes": 120000
+  },
+  "superficie": {
+    "util": 81,
+    "total": 85
+  },
+  "dormitorios": 2,
+  "banos": 2,
+  "estacionamientos": 1,
+  "bodegas": 1,
+  "orientacion": "Oriente",
+  "piso": 5,
+  "anoConstruccion": 2017,
+  "descripcion": "Amplio departamento en sector consolidado de Providencia, cerca de Metro Salvador y Parque Balmaceda. Cocina separada y dos baños completos.",
+  "amenidades": [
+    "estacionamiento",
+    "bodega",
+    "conserjeria-24-7"
+  ],
+  "etiquetas": [
+    "destacada"
+  ],
+  "estado": "disponible",
+  "media": [
+    {
+      "url": "/images/prop-3.jpg",
+      "alt": "Hall de entrada con arcos de piedra, departamento en Providencia",
+      "isCover": true
+    }
+  ],
+  "fechaPublicacion": "2026-05-15",
+  "fechaActualizacion": "2026-07-15",
+  "destacada": true
+}

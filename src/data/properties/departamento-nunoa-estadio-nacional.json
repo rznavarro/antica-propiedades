@@ -1,0 +1,51 @@
+{
+  "id": "p-001",
+  "slug": "departamento-nunoa-estadio-nacional",
+  "referencia": "AP-1001",
+  "titulo": "Departamento en Ñuñoa — Estadio Nacional",
+  "operacion": "arriendo",
+  "tipo": "departamento",
+  "comuna": "nunoa",
+  "sector": "Estadio Nacional",
+  "geo": {
+    "lat": -33.4632,
+    "lng": -70.6118
+  },
+  "precio": {
+    "monto": 600000,
+    "moneda": "CLP",
+    "gastosComunes": 65000
+  },
+  "superficie": {
+    "util": 63,
+    "total": 66
+  },
+  "dormitorios": 2,
+  "banos": 2,
+  "estacionamientos": 1,
+  "bodegas": 1,
+  "orientacion": "Norte",
+  "piso": 8,
+  "anoConstruccion": 2019,
+  "descripcion": "Departamento luminoso a pasos del Estadio Nacional, con living-comedor amplio, cocina equipada y dos dormitorios con buena separación. Excelente conectividad con Metro Ñuble y Av. Grecia.",
+  "amenidades": [
+    "estacionamiento",
+    "bodega",
+    "conserjeria-24-7",
+    "gimnasio"
+  ],
+  "etiquetas": [
+    "destacada"
+  ],
+  "estado": "disponible",
+  "media": [
+    {
+      "url": "/images/prop-9.jpg",
+      "alt": "Living moderno con ventanales de piso a techo, departamento en Ñuñoa",
+      "isCover": true
+    }
+  ],
+  "fechaPublicacion": "2026-06-01",
+  "fechaActualizacion": "2026-07-20",
+  "destacada": true
+}
